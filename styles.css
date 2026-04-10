@@ -1,0 +1,251 @@
+:root {
+  --raf-night: #11233d;
+  --raf-blue: #5e8cae;
+  --raf-sky: #9fc3da;
+  --raf-gold: #d8ab4e;
+  --raf-cream: #f5f0e2;
+  --raf-white: #fcfaf4;
+  --ink: #1b2737;
+  --shadow: 0 24px 60px rgba(12, 22, 36, 0.2);
+  --header-band: 9.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(159, 195, 218, 0.46), transparent 24%),
+    radial-gradient(circle at top right, rgba(216, 171, 78, 0.16), transparent 28%),
+    linear-gradient(180deg, #10213a 0 var(--header-band), var(--raf-cream) var(--header-band) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 6rem 6rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 60%);
+  pointer-events: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.page-shell {
+  position: relative;
+  width: min(100%, 78rem);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  padding: 0.75rem 0 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-crest {
+  width: clamp(3.75rem, 18vw, 5.4rem);
+  height: auto;
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.18));
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.brand-kicker {
+  color: var(--raf-sky);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brand-name {
+  color: var(--raf-white);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.hero-layout {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding: 0.85rem 0 1rem;
+}
+
+.hero-panel {
+  width: min(100%, 32rem);
+  display: grid;
+  gap: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.95rem;
+  min-height: 4.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 64px rgba(12, 22, 36, 0.24);
+}
+
+.button-primary {
+  color: var(--raf-night);
+  background: linear-gradient(135deg, #f0cb7b, var(--raf-gold));
+}
+
+.button-secondary {
+  color: var(--raf-white);
+  background: linear-gradient(135deg, rgba(94, 140, 174, 0.96), rgba(17, 35, 61, 0.98));
+}
+
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.button-primary .button-icon {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.button-icon img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.button-label {
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise 700ms ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 100ms;
+}
+
+.delay-2 {
+  animation-delay: 220ms;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --header-band: 22rem;
+  }
+
+  .page-shell {
+    padding-inline: 1.5rem;
+  }
+
+  .site-header {
+    padding-top: 1.25rem;
+  }
+
+  .hero-layout {
+    align-content: center;
+    padding: 2rem 0;
+  }
+
+  .hero-panel {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1080px) {
+  .page-shell {
+    padding-inline: 2rem;
+  }
+
+  .hero-panel {
+    width: min(100%, 34rem);
+  }
+
+  .button {
+    min-height: 4.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

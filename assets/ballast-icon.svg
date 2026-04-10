@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-hidden="true">
+  <path
+    d="M44 20c0-11.046 8.954-20 20-20s20 8.954 20 20h10c0-16.569-13.431-30-30-30S34 3.431 34 20z"
+    fill="#d8ab4e"
+  />
+  <path
+    d="M16 38h96a8 8 0 0 1 8 8v18a32 32 0 0 1-32 32H40A32 32 0 0 1 8 64V46a8 8 0 0 1 8-8Z"
+    fill="#11233d"
+  />
+  <path
+    d="M28 50h72v14a20 20 0 0 1-20 20H48a20 20 0 0 1-20-20Z"
+    fill="#5e8cae"
+  />
+  <circle cx="64" cy="61" r="8" fill="#fcfaf4" />
+</svg>
