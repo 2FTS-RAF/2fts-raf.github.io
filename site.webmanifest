@@ -1,0 +1,21 @@
+{
+  "name": "2FTS Landing Page",
+  "short_name": "2FTS",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#11233d",
+  "background_color": "#f5f0e2",
+  "display": "standalone"
+}
